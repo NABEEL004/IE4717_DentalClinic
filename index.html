@@ -7,20 +7,39 @@
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-    <nav>
+    <nav id="desktop-nav">
         <div class="logo">Tan & Sons<br><span class="logo-bottomrow">Dental Clinic</span></div>
         <div class="menu-container">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/dentists">Our Dentists</a></li>
-                <li><a href="/services">Services & Fees</a></li>
-                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#dentists">Our Dentists</a></li>
+                <li><a href="#services">Services & Fees</a></li>
+                <li><a href="#contact">Contact Us</a></li>
                 <li>
-                    <a href="/appointment">
-                        <div class="appointment">Make an<br>Appointment</div>
+                    <a href="#appointment" id="appointment_link">
+                        <div id="appointment">Make an<br>Appointment</div>
                     </a>
                 </li>
             </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Tan & Sons<br><span class="logo-bottomrow">Dental Clinic</span></div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#dentists" onclick="toggleMenu()">Our Dentists</a></li>
+                    <li><a href="#services" onclick="toggleMenu()">Services & Fees</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact Us</a></li>
+                    <li><a href="#appointment" onclick="toggleMenu()">Book Appointment</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <script src="script.js"></script>
