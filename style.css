@@ -12,6 +12,8 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+/* NAVBAR STYLING */
+
 nav {
     display: flex;
     height: 17vh;
@@ -162,4 +164,15 @@ ul li a:hover{
 
 .hamburger-icon span:last-child {
     transform: none;
+}
+
+/* FOOTER STYLING */
+
+footer {
+    position: absolute;
+    bottom: 12px;
+    left: calc(50vw - 156px);
+    width: 312px;
+    font-size: 0.7rem;
+    text-align: center;
 }
