@@ -6,4 +6,10 @@
     #hamburger-nav {
         display: flex;
     }
+
+    .logo {
+        padding-left:24px;
+        font-size:2rem;
+        line-height: 1.9rem;
+    }
 }
