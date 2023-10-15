@@ -25,6 +25,7 @@ a{
 nav {
     display: flex;
     height: 17vh;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
     background-color: #B2D9DB;
