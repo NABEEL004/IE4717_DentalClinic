@@ -12,6 +12,14 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+/* html {
+    scroll-behavior: smooth;
+} */
+
+a{
+    transition: all 300ms ease;
+}
+
 /* NAVBAR STYLING */
 
 nav {
@@ -121,6 +129,7 @@ ul li a:hover{
     width: 180px;
     overflow: hidden;
     transition: all 300ms ease-in-out;
+    z-index: 9999;
 }
 
 .menu-links ul li {
@@ -164,6 +173,91 @@ ul li a:hover{
 
 .hamburger-icon span:last-child {
     transform: none;
+}
+
+/* CONTAINER STYLING */
+.content-container {
+    /* display: flex; */
+    /* flex-direction: row; */
+    height: 83vh;
+}
+
+.image-container {
+    flex: 1;
+
+    
+}
+
+.image-container:after {
+    content:'';
+    position:absolute;
+    left:0; top:17vh;
+    width:40vw; height:83vh;
+    display:inline-block;
+    /* background: -moz-linear-gradient(top, rgba(0,47,75,0.5) 0%, rgba(220, 66, 37, 0.5) 100%); FF3.6+ */
+    /* background: -webkit-gradient(linear, left, right, color-stop(0%,rgba(220, 66, 37, 0.5)), color-stop(100%,rgba(0,47,75,0.5))); Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(0,47,75,0) 0%,#F3FAEF 100%); /* Chrome10+,Safari5.1+ */
+    /* background: -o-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); Opera 11.10+ */
+    /* background: -ms-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); IE10+ */
+    /* background: linear-gradient(to bottom, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  }
+
+img {
+    width: auto;
+    height: 83vh;
+    transform: translateX();
+    overflow: hidden;
+}
+
+.about-container {
+    position: absolute;
+    width:60vw;
+    height: 83vh;
+    top:17vh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* margin:48px 48px 48px 12px; */
+    gap:2rem;
+    background-color: #F3FAEF;
+    
+    
+}
+
+h2 {
+    color:#D4494C;
+    font-size: 2rem;
+}
+
+.about-us, .why-choose-us {
+    padding: 0px 48px;
+}
+
+.why-choose-us {
+    text-align: left;
+}
+
+button {
+    background-color: #517B9A;
+    color: #FFFFFF;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size:1.2rem;
+    padding: 18px 32px;
+    border-radius: 24px;
+    border-width: 0;
+    cursor:pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #223554;
+    transform: scale(1.02);
+    transition: all 300ms ease
 }
 
 /* FOOTER STYLING */
