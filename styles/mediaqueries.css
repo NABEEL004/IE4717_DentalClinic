@@ -35,4 +35,8 @@
         margin-bottom:20px;
     }
 
+    table {
+        font-size: 0.9rem;
+        width: 480px;
+    }
 }

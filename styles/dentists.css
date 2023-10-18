@@ -1,0 +1,45 @@
+.dentists-container img {
+    height: 250px;
+    width: 250px;
+}
+
+.dentist {
+    width: 320px;
+    height: 420px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 20px;
+    gap: 0.5rem;
+}
+
+.dentists-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3FAEF;
+}
+
+.title {
+    color: #223554;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+button {
+    margin-bottom: 2rem;
+}

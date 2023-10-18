@@ -1,0 +1,25 @@
+.about-container {
+    /* justify-content:/; */
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+li {
+    text-align: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: space-between;
+    align-items: center;
+    list-style-position: inside;
+    font-size: 1.2rem;
+}
+
+.contact-info {
+    list-style-type: none;
+}
