@@ -26,10 +26,6 @@
     grid-template-rows: 4; */
 }
 
-form div {
-    height: 40px;
-}
-
 .signin-container h2 {
     color: #223554;
 }
@@ -41,16 +37,14 @@ form div {
 }
 
 .signin-container label {
-    /* display: inline-block; */
-    /* float: left; */
-    min-width: 700px;
+    min-width: 200px;
     font-size: 1rem;
     font-weight: 500;
 }
 
 .signin-container .submit {
     height: 50px;
-    width: 250px;
+    width: 200px;
     border-radius: 40px;
     background-color: #517B9A ;
     border-width: 0;

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/dentists.css">
+    <link rel="stylesheet" href="./styles/signin.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
                 <li><a href="/services.html">Services & Fees</a></li>
                 <li><a href="/contact.html">Contact Us</a></li>
                 <li>
-                    <a href="/signin.html" id="appointment_link">
+                    <a href="/appointment.html" id="appointment_link">
                         <div id="appointment">Make an<br>Appointment</div>
                     </a>
                 </li>
@@ -38,31 +38,40 @@
                     <li><a href="/dentists.html" onclick="toggleMenu()">Our Dentists</a></li>
                     <li><a href="/services.html" onclick="toggleMenu()">Services & Fees</a></li>
                     <li><a href="/contact.html" onclick="toggleMenu()">Contact Us</a></li>
-                    <li><a href="/signin.html" onclick="toggleMenu()">Book Appointment</a></li>
+                    <li><a href="/appointment.html" onclick="toggleMenu()">Book Appointment</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="content-container">
-        <h2 class="title">Our Dentists</h2>
-        <div class="dentists-container">
-            <div class="dentist">
-                <img src="./assets/Doctor1.png" alt="">
-                <h3>Dr Lee</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, doloribus. Dolorem recusandae magni deserunt, error excepturi sit.</p>
+       <div class="signin-container">
+            <h2>Sign In</h2>
+            <form action="" method=""> <!-- Replace "submit_page.php" with your actual form processing script -->
+                <div>
+                    <label for="domain"><sup>*</sup>Domain:</label>
+                    <select id="domain" name="domain">
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                    <br><br>
+                </div>
+                <div>
+                    <label for="email"><sup>*</sup>Email: </label>
+                    <input type="text" id="email" name="email" required>
+                    <br><br>
+                </div>
+                <div>
+                    <label for="password"><sup>*</sup>Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br><br>
+                </div>
+                <input type="submit" value="Sign In" class="submit">
+            </form>
+            <div class="createaccount">
+             <p>Don't have an account?</p>
+             <a href="/createaccount.html">Create a new account here</a>
             </div>
-            <div class="dentist">
-                <img src="./assets/Doctor2.png" alt="">
-                <h3>Dr Shawn</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, doloribus. Dolorem recusandae magni deserunt, error excepturi sit.</p>
-            </div>
-            <div class="dentist">
-                <img src="./assets/Doctor3.png" alt="">
-                <h3>Dr Shanice</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia, doloribus. Dolorem recusandae magni deserunt, error excepturi sit.</p>
-            </div>
-        </div>
-        <button class="bookwithus" onclick="window.location='/signin.html'">Book With Us Today!</button>
+       </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     <script src="script.js"></script>

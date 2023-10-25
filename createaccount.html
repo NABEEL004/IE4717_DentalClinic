@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/appointment.css">
+    <link rel="stylesheet" href="./styles/createaccount.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
 </head>
 <body>
@@ -45,37 +45,47 @@
     </nav>
     <div class="content-container">
        <div class="signin-container">
-            <h2>Make an Appointment</h2>
-            <p>Making an appointment for Alex</p>
+            <h2>Create New Account</h2>
             <form action="" method=""> <!-- Replace "submit_page.php" with your actual form processing script -->
                 <div>
-                    <label for="dentist"><sup>*</sup>Dentist:</label>
-                    <select id="dentist" name="dentist">
-                        <option >Dr Lee</option>
-                        <option >Dr Shawn</option>
-                        <option >Dr Shanice</option>
+                    <label for="domain"><sup>*</sup>Domain:</label>
+                    <select id="domain" name="domain">
+                        <option value="patient">Patient</option>
                         <!-- <option value="doctor">Doctor</option> -->
                     </select>
                     <br><br>
                 </div>
                 <div>
-                    <label for="date"><sup>*</sup>Date: </label>
-                    <input type="date" id="date" name="date">
-                    <!-- <input type="text" id="name" name="name" required> -->
+                    <label for="name"><sup>*</sup>Name: </label>
+                    <input type="text" id="name" name="name" required>
                     <br><br>
                 </div>
                 <div>
-                    <label for="time"><sup>*</sup>Time: </label>
-                    <input type="text" id="time" name="time" required>
+                    <label for="password"><sup>*</sup>Password: </label>
+                    <input type="password" id="password" name= "password" required>
                     <br><br>
                 </div>
                 <div>
-                    <label for="note"><sup>*</sup>Note to Clinic: </label>
-                    <input type="text" id="note" name="note" required>
+                    <label for="re-password"><sup>*</sup>Re-type Password: </label>
+                    <input type="password" id="re-password" name="re-password" required>
                     <br><br>
                 </div>
-                <input type="submit" value="Book Appointment" class="submit">
+                <div>
+                    <label for="email"><sup>*</sup>Email: </label>
+                    <input type="text" id="email" name="email" required>
+                    <br><br>
+                </div>
+                <div>
+                    <label for="number"><sup>*</sup>Phone Number: </label>
+                    <input type="text" id="number" name="number" required>
+                    <br><br>
+                </div>
+                <input type="submit" value="Create Account" class="submit">
             </form>
+            <div class="createaccount">
+             <p>Have an account?</p>
+             <a href="/signin.html">Sign-in here</a>
+            </div>
        </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
