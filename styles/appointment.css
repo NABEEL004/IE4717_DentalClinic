@@ -1,0 +1,64 @@
+.content-container {
+    background-color: #D1E8E9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-container {
+    background-color: #F3FAEF;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 40px;
+    width: 60%;
+    height:50vh;
+}
+
+.signin-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    /* grid-template-columns: 2;
+    grid-template-rows: 4; */
+}
+
+.signin-container h2 {
+    color: #223554;
+}
+
+.signin-container input, .signin-container select {
+    width: 300px;
+    height: 30px;
+    font-weight: 500;
+}
+
+.signin-container label {
+    min-width: 200px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.signin-container .submit {
+    height: 50px;
+    width: 200px;
+    border-radius: 40px;
+    background-color: #517B9A ;
+    border-width: 0;
+    color: #FFF;
+    font-size: 1.3rem;
+    font-weight: 600;
+    /* margin: 0 auto ; */
+}
+
+.signin-container .submit:hover {
+    background-color: #223554;
+    cursor: pointer;
+}
+
+.createaccount {
+    text-align: center;
+}
