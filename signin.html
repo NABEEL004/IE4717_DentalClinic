@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/signin.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <script src="password.js"></script>
 </head>
 <body>
     <nav id="desktop-nav">
@@ -17,7 +18,7 @@
                 <li><a href="/services.html">Services & Fees</a></li>
                 <li><a href="/contact.html">Contact Us</a></li>
                 <li>
-                    <a href="/appointment.html" id="appointment_link">
+                    <a href="/signin.html" id="appointment_link">
                         <div id="appointment">Make an<br>Appointment</div>
                     </a>
                 </li>
@@ -50,8 +51,8 @@
                 <div>
                     <label for="domain"><sup>*</sup>Domain:</label>
                     <select id="domain" name="domain">
-                        <option value="patient">Patient</option>
-                        <option value="doctor">Doctor</option>
+                            <option value="patient">Patient</option>
+                            <option value="doctor">Doctor</option>
                     </select>
                     <br><br>
                 </div>
@@ -60,9 +61,11 @@
                     <input type="text" id="email" name="email" required>
                     <br><br>
                 </div>
-                <div>
+                <div id="password-wrapper">
                     <label for="password"><sup>*</sup>Password:</label>
                     <input type="password" id="password" name="password" required>
+                    <img src="./assets/hidden.png" id="hidden" alt="hidden">
+                    <img src="./assets/visible.png" id="visible" alt="visible">
                     <br><br>
                 </div>
                 <input type="submit" value="Sign In" class="submit">

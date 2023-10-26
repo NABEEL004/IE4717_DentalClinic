@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/createaccount.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <script src="create-password.js"></script>
 </head>
 <body>
     <nav id="desktop-nav">
@@ -38,7 +39,7 @@
                     <li><a href="/dentists.html" onclick="toggleMenu()">Our Dentists</a></li>
                     <li><a href="/services.html" onclick="toggleMenu()">Services & Fees</a></li>
                     <li><a href="/contact.html" onclick="toggleMenu()">Contact Us</a></li>
-                    <li><a href="/appointment.html" onclick="toggleMenu()">Book Appointment</a></li>
+                    <li><a href="/signin.html" onclick="toggleMenu()">Book Appointment</a></li>
                 </ul>
             </div>
         </div>
@@ -60,14 +61,18 @@
                     <input type="text" id="name" name="name" required>
                     <br><br>
                 </div>
-                <div>
+                <div class="password-wrapper">
                     <label for="password"><sup>*</sup>Password: </label>
                     <input type="password" id="password" name= "password" required>
+                    <img src="./assets/hidden.png" id="hidden-1" alt="hidden">
+                    <img src="./assets/visible.png" id="visible-1" alt="visible">
                     <br><br>
                 </div>
-                <div>
+                <div class="password-wrapper">
                     <label for="re-password"><sup>*</sup>Re-type Password: </label>
                     <input type="password" id="re-password" name="re-password" required>
+                    <img src="./assets/hidden.png" id="hidden-2" alt="hidden">
+                    <img src="./assets/visible.png" id="visible-2" alt="visible">
                     <br><br>
                 </div>
                 <div>
