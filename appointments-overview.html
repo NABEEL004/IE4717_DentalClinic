@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/appointment.css">
+    <link rel="stylesheet" href="./styles/appointments-overview.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
 </head>
 <body>
@@ -44,46 +44,37 @@
         </div>
     </nav>
     <div class="content-container">
-       <div class="signin-container">
-            <h2>Make an Appointment</h2>
-            <p>Making an appointment for Alex</p>
-            <form action="" method=""> <!-- Replace "submit_page.php" with your actual form processing script -->
-                <div>
-                    <label for="dentist"><sup>*</sup>Dentist:</label>
-                    <select id="dentist" name="dentist" required>
-                        <option >Dr Lee</option>
-                        <option >Dr Shawn</option>
-                        <option >Dr Shanice</option>
-                        <!-- <option value="doctor">Doctor</option> -->
-                    </select>
-                    <br><br>
-                </div>
-                <div>
-                    <label for="date"><sup>*</sup>Date: </label>
-                    <input type="date" id="date" name="date" required>
-                    <!-- <input type="text" id="name" name="name" required> -->
-                    <br><br>
-                </div>
-                <div>
-                    <label for="time"><sup>*</sup>Time: </label>
-                    <select id="time" name="time" required>
-                        <option> 9.00 am </option>
-                        <option> 10.00 am </option>
-                        <option> 11.00 am </option>
-                        <option> 12.00 pm </option>
-                        <option> 2.00 pm </option>
-                        <option> 3.00 pm </option>
-                        <option> 4.00 pm </option>
-                    </select>
-                    <br><br>
-                </div>
-                <div>
-                    <label for="note">Note to Clinic: </label>
-                    <input type="text" id="note" name="note" >
-                    <br><br>
-                </div>
-                <input type="submit" value="Book Appointment" class="submit">
+       <div class="details-container">
+            <h2>Appointments</h2>
+            <p>Appointments for Dr Lee</p>
+            <form action="">
+                <label for="date">Date: </label>
+                <input type="date" name="date" id="date">
             </form>
+            <table>
+                <tr>
+                    <th>Time:</th>   
+                    <th>Patient:</th>   
+                    <th>Contact No.:</th>   
+                    <th>Email:</th>   
+                    <th></th>   
+                </tr>
+                <tr>
+                    <td>9.00 - 9.45 am</td>
+                    <td>Alex</td>
+                    <td>9786 5432</td>
+                    <td>alex1234@google.com</td>
+                    <td><a href="appointment-details.html"><button>View</button></a></td>
+                </tr>
+                <tr>
+                    <td>10.00 - 10.45 am</td>
+                    <td>John</td>
+                    <td>9286 5132</td>
+                    <td>john1124@yahoo.com</td>
+                    <td><a href="appointment-details.html"><button>View</button></a></td>
+                </tr>
+            </table>
+
        </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
