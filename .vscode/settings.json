@@ -1,0 +1,4 @@
+{
+    // "phpserver.documentRoot": "${workspaceFolder}",
+    "phpserver.phpPath": "/Applications/XAMPP/bin/php"
+}
