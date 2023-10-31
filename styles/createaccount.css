@@ -6,6 +6,7 @@
 }
 
 .signin-container {
+    margin-top: 180px; /* how to adjust the height of the 'create account form' to make it nicer?*/
     background-color: #F3FAEF;
     padding: 3rem 4rem;
     display: flex;
@@ -14,7 +15,7 @@
     align-items: center;
     border-radius: 40px;
     width: 60%;
-    height:60vh;
+    height:90vh;
 }
 
 .signin-container form {
@@ -47,9 +48,9 @@ input[type="text"], input[type="password"], select
 }
 
 .signin-container label {
-    min-width: 150px;
+    min-width: 200px;
     display: inline-block;
-    text-align: right;
+    /* text-align: right; */
     font-size: 1.1rem;
     font-weight: 500;
     margin-right: 10px;
@@ -115,3 +116,53 @@ input[type="text"], input[type="password"], select
 .createaccount {
     text-align: center;
 }
+
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+/* Styling for checked checkboxes */
+input[type="checkbox"] + label::before {
+    content: '❌'; /* Red cross by default */
+    color: red;
+}
+
+
+
+/* Styling for checked checkboxes */
+input[type="checkbox"]:checked + label::before {
+    content: '✅'; /* Green checkmark for fulfilled requirements */
+    color: white;
+}
+
+
+
+input[type="checkbox"]#rule5 + label::before {
+    content: '✅'; /* Green checkmark for fulfilled requirements */
+    color: white;
+}
+
+/* Styling for the checked checkboxes (spaces detected) */
+input[type="checkbox"]#rule5:checked + label::before {
+    content: '❌'; /* Red cross for unfulfilled requirements */
+    color: red;
+}
+
+input[type="checkbox"]#consistent + label::before {
+    content: '✅'; /* Green checkmark for fulfilled requirements */
+    color: white;
+}
+
+/* Styling for the checked checkboxes (spaces detected) */
+input[type="checkbox"]#consistent:checked + label::before {
+    content: '❌'; /* Red cross for unfulfilled requirements */
+    color: red;
+}
+
+
+

@@ -1,3 +1,33 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+include "db_connection.php";
+?>
+<?php
+    if(isset($_POST["name"])&&isset($_POST["password"])&&isset($_POST["email"])&&isset($_POST["number"]))
+    {
+        $name = $_POST["name"];
+        $name = trim($name);
+        $pwd = password_hash($_POST["password"],PASSWORD_DEFAULT);
+        $email = $_POST["email"];
+        $email = strtolower(trim($email));
+        $number = $_POST["number"];
+        $query = "INSERT INTO patients(username,password,email,phone_number) VALUES(?,?,?,?)";
+        $stmt = $db->prepare($query);
+        $stmt->bind_param('ssss',$name,$pwd,$email,$number);
+        if(!$stmt->execute())
+        {
+            echo "<script>alert('Registration failed!');</script>";
+        }
+        else
+        {
+            echo "<script>alert('Registration is successful!');</script>";
+        }
+        $stmt->close();
+        $db->close();
+    }
+?>
+
 <html lang="en">
 
 <head>
@@ -68,7 +98,7 @@
         <div class="signin-container">
             <h2>Create New Account</h2>
             <br>
-            <form action="" method="post" id="info">
+            <form action="createaccount.php" method="post" id="info">
                 <!-- Replace "submit_page.php" with your actual form processing script -->
                 <div>
                     <label for="domain"><sup>*</sup>Domain:</label>
