@@ -1,3 +1,31 @@
+<?php
+    require_once "config_session.php";
+    require_once "login_control.php";
+    require_once "db_connection.php";
+    if(isset($_SESSION["user_id"])&&isset($_SESSION["domain"])&&isset($_SESSION["name"]))
+    {
+        $user_id = $_SESSION["user_id"];
+        $domain = $_SESSION["domain"];
+        $user_name = $_SESSION["name"];
+
+        if($domain=='patient')
+        {
+            if(have_appointment($db,$user_id))
+            {
+                header("Location: appointment-details.php");
+            }
+        }
+        else
+        {
+            header("Location: appointments-overview.php");
+        }
+
+
+    }
+
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +45,7 @@
                 <li><a href="./services.html">Services & Fees</a></li>
                 <li><a href="./contact.html">Contact Us</a></li>
                 <li>
-                    <a href="./signin.html" id="appointment_link">
+                    <a href="./signin.php" id="appointment_link">
                         <div id="appointment">Make an<br>Appointment</div>
                     </a>
                 </li>
@@ -38,7 +66,7 @@
                     <li><a href="./dentists.html" onclick="toggleMenu()">Our Dentists</a></li>
                     <li><a href="./services.html" onclick="toggleMenu()">Services & Fees</a></li>
                     <li><a href="./contact.html" onclick="toggleMenu()">Contact Us</a></li>
-                    <li><a href="./appointment.html" onclick="toggleMenu()">Book Appointment</a></li>
+                    <li><a href="./appointment.php" onclick="toggleMenu()">Book Appointment</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +74,9 @@
     <div class="content-container">
        <div class="signin-container">
             <h2>Make an Appointment</h2>
-            <p>Making an appointment for Alex</p>
+            <br>
+            <p><i>Welcome to Tan&Sons Dental Clinic, <?php echo $_SESSION["name"];?>. How can we help you today?</i></p>
+            <br>
             <form action="" method=""> <!-- Replace "submit_page.php" with your actual form processing script -->
                 <div>
                     <label for="dentist"><sup>*</sup>Dentist:</label>

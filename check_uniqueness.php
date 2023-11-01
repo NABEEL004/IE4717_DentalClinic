@@ -28,6 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Output the numebr of repeated emails or phone numbers
     echo $num_results;
 }
+else
+{
+    header("Location: createaccount.php");
+}
 
 ?>
 

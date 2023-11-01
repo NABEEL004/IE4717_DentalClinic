@@ -68,7 +68,7 @@ include "db_connection.php";
                 <li><a href="./services.html">Services & Fees</a></li>
                 <li><a href="./contact.html">Contact Us</a></li>
                 <li>
-                    <a href="./signin.html" id="appointment_link">
+                    <a href="./signin.php" id="appointment_link">
                         <div id="appointment">Make an<br>Appointment</div>
                     </a>
                 </li>
@@ -89,7 +89,7 @@ include "db_connection.php";
                     <li><a href="./dentists.html" onclick="toggleMenu()">Our Dentists</a></li>
                     <li><a href="./services.html" onclick="toggleMenu()">Services & Fees</a></li>
                     <li><a href="./contact.html" onclick="toggleMenu()">Contact Us</a></li>
-                    <li><a href="./signin.html" onclick="toggleMenu()">Book Appointment</a></li>
+                    <li><a href="./signin.php" onclick="toggleMenu()">Book Appointment</a></li>
                 </ul>
             </div>
         </div>
@@ -178,7 +178,7 @@ include "db_connection.php";
             </form>
             <div class="createaccount">
                 <p>Have an account?</p>
-                <a href="./signin.html">Sign-in here</a>
+                <a href="./signin.php">Sign-in here</a>
             </div>
         </div>
     </div>

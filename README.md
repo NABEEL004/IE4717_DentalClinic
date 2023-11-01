@@ -12,6 +12,14 @@ QA:
 
 4. retype password and mobile phone number alignment???
 
+5. client side manipulation. Deletion of required field in 'input' tag. Accidentally entered the websites that should not be accessible?
+
+6. how to maintain the state of log in???
+
+7. assume doctors have unique name(they cant have the same name)
+
+8. implement logout button otherwise clear the caches manually
+
 TODO:
 
 1. input validation for create new account:<br>a. the max(min) length of NAME and no illegal chars<BR>

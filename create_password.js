@@ -47,7 +47,7 @@ window.onload = function () {
     const name_reg = /^(?![-\s']+$)[A-Za-z\s-']+$/;
     if (!name_reg.test(name.value.trim())) {
       var name_alert = document.getElementById("name_alert");
-      name_alert.innerHTML = "Name must contain alphabetical characters. Hyphens, apostrophes and spaces can be used (optional).";
+      name_alert.innerHTML = "Name must only contain alphabetical characters. Hyphens, apostrophes and spaces can be used (optional).";
       prevent = true;
     }
     else { document.getElementById("name_alert").innerHTML = ''; }
