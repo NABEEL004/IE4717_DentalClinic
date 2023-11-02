@@ -1,13 +1,34 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+include "db_connection.php";
+?>
+<?php
+    if(isset($_POST["name"])&&isset($_POST["password"])&&isset($_POST["email"])&&isset($_POST["number"]))
+    {
+        $name = $_POST["name"];
+        $name = trim($name);
+        $pwd = password_hash($_POST["password"],PASSWORD_DEFAULT);
+        $email = $_POST["email"];
+        $email = strtolower(trim($email));
+        $number = $_POST["number"];
+        $query = "INSERT INTO doctors(username,password,email,phone_number) VALUES(?,?,?,?)";
+        $stmt = $db->prepare($query);
+        $stmt->bind_param('ssss',$name,$pwd,$email,$number);
+        if(!$stmt->execute())
+        {
+            echo "<script>alert('Registration failed!');</script>";
+        }
+        else
+        {
+            echo "<script>alert('Registration is successful!');</script>";
+        }
+        $stmt->close();
+        $db->close();
+    }
+?>
+
 <html lang="en">
-
-
-
-
-
-<!--This page has deprecated!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-
-
-
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +37,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/createaccount.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
-    <script src="./create_password.js"></script>
+    <script src="./doctor_creation.js"></script>
     <style>
         .validation_guide {
             padding-top: 5px;
@@ -42,15 +63,8 @@
         <div class="logo">Tan & Sons<br><span class="logo-bottomrow">Dental Clinic</span></div>
         <div class="menu-container">
             <ul>
-                <li><a href="./">Home</a></li>
-                <li><a href="./dentists.html">Our Dentists</a></li>
-                <li><a href="./services.html">Services & Fees</a></li>
-                <li><a href="./contact.html">Contact Us</a></li>
-                <li>
-                    <a href="./signin.html" id="appointment_link">
-                        <div id="appointment">Make an<br>Appointment</div>
-                    </a>
-                </li>
+                <li><a href="./admin.php">Doctor Account Overview</a></li>
+                <li><a href="./doctor_creation.php">Doctor Account Creation</a></li>
             </ul>
         </div>
     </nav>
@@ -64,11 +78,8 @@
             </div>
             <div class="menu-links">
                 <ul>
-                    <li><a href="./" onclick="toggleMenu()">Home</a></li>
-                    <li><a href="./dentists.html" onclick="toggleMenu()">Our Dentists</a></li>
-                    <li><a href="./services.html" onclick="toggleMenu()">Services & Fees</a></li>
-                    <li><a href="./contact.html" onclick="toggleMenu()">Contact Us</a></li>
-                    <li><a href="./signin.html" onclick="toggleMenu()">Book Appointment</a></li>
+                    <li><a href="./admin.php" onclick="toggleMenu()">Doctor Account Overview</a></li>
+                    <li><a href="./doctor_creation.php" onclick="toggleMenu()">Doctor Account Creation</a></li>
                 </ul>
             </div>
         </div>
@@ -77,12 +88,12 @@
         <div class="signin-container">
             <h2>Create New Account</h2>
             <br>
-            <form action="" method="post" id="info">
+            <form action="doctor_creation.php" method="post" id="info">
                 <!-- Replace "submit_page.php" with your actual form processing script -->
                 <div>
                     <label for="domain"><sup>*</sup>Domain:</label>
                     <select id="domain" name="domain">
-                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
                     </select>
                 </div>
                 <br>
@@ -137,9 +148,6 @@
                     </tr>
                 </table>
                 <br>
-                <!-- The inputs for password and re-type password can be more interactive
-                    Refer to website e.g.: https://users.premierleague.com/users/register/personal
-                -->
 
                 <div>
                     <label for="email"><sup>*</sup>Email: </label>
@@ -157,7 +165,7 @@
             </form>
             <div class="createaccount">
                 <p>Have an account?</p>
-                <a href="./signin.html">Sign-in here</a>
+                <a href="./signin.php">Sign-in here</a>
             </div>
         </div>
     </div>

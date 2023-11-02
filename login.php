@@ -64,9 +64,21 @@
         $_SESSION["user_id"] = $domain=='patient'?$fetched_data["patient_id"]:$fetched_data["doctor_id"];
         $_SESSION["name"] = $fetched_data["username"];
 
+        // if($_SESSION["domain"]==='patient')
+        // {
+        //     if(have_appointment($db,$_SESSION["user_id"]))
+        //     {   
+        //         header("Location: appointment-details.php");
+        //     }
+        //     else
+        //     {
+        //         header("Location: appointment.php");
+        //     }
+        // }
 
-        header("Location: signin.php?login=successful");
+        header("Location: signin.php");
         // header("Location: test.php?login=successful");
+
 
         // if($domain=='patient')
         // {

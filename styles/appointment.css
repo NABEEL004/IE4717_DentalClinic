@@ -47,6 +47,14 @@ input[type="text"], input[type="password"], input[type="date"], select
     padding-left: 0.5rem;
 }
 
+.signin-container textarea{
+    width: 300px;
+    height: 60px;
+    font-weight: 500;
+    font-family: 'Roboto Slab', sans-serif;
+    padding-left: 0.5rem;
+}
+
 .signin-container label {
     min-width: 120px;
     display: inline-block;

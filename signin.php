@@ -1,46 +1,37 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', 'on');        
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 ?>
 <?php
-    require_once "login_check.php";
-    require_once "config_session.php";
-    require_once "login_control.php";
+require_once "login_check.php";
+require_once "config_session.php";
+require_once "login_control.php";
 
-    // if(isset($_GET["login"])&&$_GET["login"]==="successful")
+// if(isset($_GET["login"])&&$_GET["login"]==="successful")
+// {
+//     date_default_timezone_set('Asia/Singapore');
+//     // Get the current time in Singapore Time
+//     $current_time = date('Y-m-d H:i:s');
+//     echo '<script>alert("Login Successful! ' . $current_time . '");</script>';        
+// }
+
+// why this block is never executed?
+
+if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION["name"])) {
+    $user_id = $_SESSION["user_id"];
+    $domain = $_SESSION["domain"];
+    $user_name = $_SESSION["name"];
+
+
+    if ($domain == 'patient') {
+        header("Location: appointment.php");
+    }
+    // else
     // {
-    //     date_default_timezone_set('Asia/Singapore');
-    //     // Get the current time in Singapore Time
-    //     $current_time = date('Y-m-d H:i:s');
-    //     echo '<script>alert("Login Successful! ' . $current_time . '");</script>';        
+
     // }
 
-    // why this block is never executed?
-
-    if(isset($_SESSION["user_id"])&&isset($_SESSION["domain"])&&isset($_SESSION["name"]))
-    {
-        $user_id = $_SESSION["user_id"];
-        $domain = $_SESSION["domain"];
-        $user_name = $_SESSION["name"];
-
-        // if(isset($_GET["login"])&&$_GET["login"]==="successful")
-        // {
-        //     date_default_timezone_set('Asia/Singapore');
-        //     // Get the current time in Singapore Time
-        //     $current_time = date('Y-m-d H:i:s');
-        //     echo '<script>alert("Login Successful! ' . $current_time . '");</script>';        
-        // }
-
-        if($domain=='patient')
-        {
-            header("Location: appointment.php");
-        }
-        // else
-        // {
-    
-        // }
-    
-    }
+}
 
 ?>
 
@@ -55,7 +46,7 @@
     <link rel="stylesheet" href="./styles/mediaqueries.css">
     <script src="password.js"></script>
     <style>
-        .login_alert{
+        .login_alert {
             font-style: italic;
             color: #FF0000;
         }
@@ -93,7 +84,7 @@
                     <li><a href="./dentists.html" onclick="toggleMenu()">Our Dentists</a></li>
                     <li><a href="./services.html" onclick="toggleMenu()">Services & Fees</a></li>
                     <li><a href="./contact.html" onclick="toggleMenu()">Contact Us</a></li>
-                    <li><a href="./appointment.html" onclick="toggleMenu()">Book Appointment</a></li>
+                    <li><a href="./appointment.php" onclick="toggleMenu()">Book Appointment</a></li>
                 </ul>
             </div>
         </div>
@@ -125,7 +116,7 @@
                 <input type="submit" value="Sign In" class="submit">
             </form>
             <?php
-                check_login_errors();
+            check_login_errors();
 
             ?>
             <br>

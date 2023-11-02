@@ -49,7 +49,7 @@
     {
         $query = "SELECT * FROM appointments WHERE patientID = ?";
         $stmt=$db->prepare($query);
-        $stmt->bind_param("d",$patientID);
+        $stmt->bind_param("i",$patientID);
         $stmt->execute();
         
         // $result='';
@@ -58,7 +58,7 @@
         // $stmt->fetch();
         // Close the statement
         $stmt->close();
-        return ($result->num_rows !== 0); // array or NULL(no matched records)
+        return ($result->num_rows !== 0); 
     }
 
 ?>

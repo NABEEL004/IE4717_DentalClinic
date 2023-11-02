@@ -18,7 +18,7 @@ QA:
 
 7. assume doctors have unique name(they cant have the same name)
 
-8. implement logout button otherwise clear the caches manually
+8. implementation of logout button has been done and styling of logout button is left.
 
 TODO:
 
@@ -34,3 +34,12 @@ f. retrieve from the database to make sure the phone number and emails entered a
 <BR>
 g. sign in use ajax to compare email and password with database follow creat_account.js
 h. handle the logic after login
+
+doctor1:
+Lee email:lee@tan.sons.com pwd:123456Aa/
+
+doctor2:
+Shawn email:shawn@tan.sons.com pwd:123456Aa/
+
+doctor3:
+Shanice email:shanice@tan.sons.com pwd:123456Aa/
