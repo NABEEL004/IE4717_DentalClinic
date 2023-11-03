@@ -25,12 +25,9 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
 
     if ($domain == 'patient') {
         header("Location: appointment.php");
+    } else {
+        header("Location: appointments-overview.php");
     }
-    // else
-    // {
-
-    // }
-
 }
 
 ?>

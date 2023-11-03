@@ -18,7 +18,8 @@ QA:
 
 7. assume doctors have unique name(they cant have the same name)
 
-8. implementation of logout button has been done and styling of logout button is left.
+8. implementation of logout button has been done and styling of logout button is left, styling of appointment and styling of appointment-details page!
+
 
 TODO:
 

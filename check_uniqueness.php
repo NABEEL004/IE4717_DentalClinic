@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 else
 {
-    header("Location: createaccount.php");
+    header("Location: signin.php");
 }
 
 ?>

@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $note = trim($note);
 
         insert_app($db, $date, $time_slot, $dentist, $_SESSION["user_id"], $note);
+        $_SESSION["app"]=true;
         header("Location: appointment-details.php");
     } else {
         header("Location: signin.php");

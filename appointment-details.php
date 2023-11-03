@@ -1,22 +1,94 @@
 <?php
 require_once "config_session.php";
 require_once "login_control.php";
+require_once "booking_control.php";
+require_once "doc_view_control.php";
 require_once "db_connection.php";
 
 if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION["name"])) {
     $user_id = $_SESSION["user_id"];
     $domain = $_SESSION["domain"];
     $user_name = $_SESSION["name"];
+    $app = '';
+
+    if (isset($_SESSION["app"])) {
+        $app = $_SESSION["app"];
+    }
 
     if ($domain === 'patient') {
         if (!have_appointment($db, $user_id)) {
             header("Location: appointment.php");
         }
+        $query = 'SELECT doctor_name,app_date,app_time,note from appointments where patientID=?';
+        $stmt = $db->prepare($query);
+        $stmt->bind_param('i', $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows != 1) {
+            echo "<script>alert('APPOINTMENT ERROR!');</script>";
+            header("Location: signin.php");
+        } else {
+            $row = $result->fetch_assoc();
+            $doc = $row["doctor_name"];
+
+            $app_date = $row["app_date"];
+            $time_stamp = strtotime($app_date);
+            $formatted_date = date("jS F Y", $time_stamp);
+
+
+            $app_time = $row["app_time"];
+            $start_time = strtotime($app_time);
+            $end_time = $start_time + 45 * 60;
+
+            $formatted_start_time = date("h:i a", $start_time);
+            $formatted_end_time = date("h:i a", $end_time);
+
+
+            $note = $row["note"];
+            $note = ($note === null) ? 'Nil' : $note;
+        }
+    } 
+    // else {
+    //     header("Location: appointments-overview.php");
+    // }
+    else if (isset($_GET["patient_email"])) {
+        $patient_id = get_patient_id($db,$_GET["patient_email"]);
+        // header("Location: appointments-overview.php");
+        $query = 'SELECT doctor_name,app_date,app_time,note from appointments where patientID=?';
+        $stmt = $db->prepare($query);
+        $stmt->bind_param('i', $patient_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows != 1) {
+            echo "<script>alert('APPOINTMENT ERROR!');</script>";
+            header("Location: signin.php");
+        } else {
+            $row = $result->fetch_assoc();
+            $doc = $row["doctor_name"];
+
+            $app_date = $row["app_date"];
+            $time_stamp = strtotime($app_date);
+            $formatted_date = date("jS F Y", $time_stamp);
+
+
+            $app_time = $row["app_time"];
+            $start_time = strtotime($app_time);
+            $end_time = $start_time + 45 * 60;
+
+            $formatted_start_time = date("h:i a", $start_time);
+            $formatted_end_time = date("h:i a", $end_time);
+
+
+            $note = $row["note"];
+            $note = ($note === null) ? 'Nil' : $note;
+        }
+
     }
     else
     {
-        header("Location: appointments-overview");
+        header("Location: signin.php");
     }
+
 } else {
     header("Location: signin.php");
 }
@@ -74,29 +146,79 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <div class="content-container">
         <div class="details-container">
             <h2>Appointment Details</h2>
-            <p>for Alex</p>
+            <br>
+            <p style="font-size: 20px;">
+                <i>
+                    <?php
+                    if($domain==='patient')
+                    {
+                        if ($app) {
+                            echo "Thank you for choosing Tan&Sons Dental Clinic, <b>" . $_SESSION["name"] . "</b>.";
+                        } else {
+                            echo "Welcome back, <b>" . $_SESSION["name"] . "</b>. How can we help you today?";
+                        }
+
+                    }
+                    else
+                    {
+                        echo "Welcome back,  <b>Dr " . $_SESSION["name"] . "</b>. How can we help you today?";
+                    }
+                    ?>
+                </i>
+            </p>
+            <?php
+            if ($app) {
+                echo "<p style='font-size: 20px;'><i>Your appointment is ready!</i></p>";
+            } else {
+                echo "</br>";
+            }
+            ?>
+            <br>
             <table>
                 <tr>
                     <th>Dentist:</th>
-                    <td>Dr Shawn</td>
+                    <td>
+                        <?php
+                        echo "Dr " . $doc;
+                        ?>
+                    </td>
                 </tr>
+                <?php
+                    if(isset($_GET["patient_email"]))
+                    {
+                        echo "<tr><th>Patient:</th><td>".get_patient_name($db,$patient_id)."</td></tr>";
+                    }
+                ?>
                 <tr>
                     <th>Date:</th>
-                    <td>10th October 2023</td>
+                    <td>
+                        <?php
+                        echo $formatted_date;
+                        ?>
+
+                    </td>
                 </tr>
                 <tr>
                     <th>Time:</th>
-                    <td>10.00 - 10.45 am</td>
+                    <td>
+                        <?php
+                        echo $formatted_start_time . " - " . $formatted_end_time;
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>Note to Clinic:</th>
-                    <td>NIL</td>
+                    <td>
+                        <?php
+                        echo $note;
+                        ?>
+                    </td>
                 </tr>
             </table>
             <a href="./reschedule.php">
                 <button class="submit">Reschedule</button>
             </a>
-            <form action="logout.php"  method="post">
+            <form action="logout.php" method="post">
                 <button>Logout</button>
             </form>
         </div>

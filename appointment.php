@@ -12,6 +12,10 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
             header("Location: appointment-details.php");
         }
     }
+    else
+    {
+        header("Location: signin.php");
+    }
 } else {
     header("Location: signin.php");
 }
