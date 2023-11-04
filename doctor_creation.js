@@ -52,7 +52,7 @@ window.onload = function () {
     }
     else { document.getElementById("name_alert").innerHTML = ''; }
 
-    const email_reg = /^[\w\.-_]+@(\w+\.){1,3}\w{2,3}$/;
+    const email_reg = /^[\w\.\-_]+@(\w+\.){1,3}\w{2,3}$/;
     if (!email_reg.test(email.value.trim())) {
       var email_alert = document.getElementById("email_alert");
       email_alert.innerHTML = "Please provide a valid email.";
