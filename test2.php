@@ -1,29 +1,47 @@
 <?php
-    // error_reporting(E_ALL);
-    // ini_set('display_errors', 'on');    
-    // require_once "config_session.php";
-    // if(isset($_GET["login"])&&$_GET["login"]==="successful")
-    // {
-    //     echo $_SESSION["domain"].$_SESSION["user_id"].$_SESSION["name"];
-    // }
     require_once "db_connection.php";
-    require_once "config_session.php";
-    require_once "login_control.php";
-?>
-
-<?php
-
-    if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION["name"]))
+    function get_doc_name($db,$id)
+{
+    $query = 'SELECT username FROM doctors where doctor_id = ?';
+    $stmt=$db->prepare($query);
+    $stmt->bind_param('i',$id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if($result->num_rows==1)
     {
-        echo $_SESSION["user_id"];
-        echo "</br>";
-        echo $_SESSION["domain"];
-        echo "</br>";
-        echo $_SESSION["name"];
-        echo "</br>";
+        return $result->fetch_assoc()["username"];
+    }
+    else
+    {
+        return '?????';
+    }
+}
 
+    echo get_doc_name($db,10);
+    $doctorId = 18;
+
+    // Your database connection code here
+    // Replace with your actual database connection code
+
+    // Perform the deletion
+    $query = "DELETE FROM doctors WHERE doctor_id = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param('i',$doctorId);
+    if ($stmt->execute()) {
+        // Successful deletion
+        $doc_name = get_doc_name($db,$doctorId);
+        $query = "DELETE FROM appointments WHERE doctor_name = ?";
+        $stmt2 = $db->prepare($query);
+        $stmt2->bind_param('s',$doc_name);
+        if ($stmt2->execute()) {
+            echo "success";
+        }else{
+            echo "error";
+        }
+
+    } else {
+        // Error during deletion
+        echo 'error';
     }
-    else{
-        echo "NOT FOUND";
-    }
+
 ?>

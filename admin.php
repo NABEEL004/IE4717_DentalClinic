@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
+require_once "db_connection.php";
+?>
 <html lang="en">
 
 <head>
@@ -6,6 +11,8 @@
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/signin.css">
+    <link rel="stylesheet" href="./styles/appointments-overview.css">
 </head>
 
 <body>
@@ -35,26 +42,68 @@
         </div>
     </nav>
     <div class="content-container">
-        <div class="image-container">
-            <img src="./assets/dental.jpg" alt="a boy getting a dental check-up">
-        </div>
-        <div class="about-container">
-            <h2>About Us</h2>
-            <div class="about-us">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus sed tempore minus
-                inventore veniam officia excepturi quaerat iste debitis, fugit quam nihil molestias distinctio
-                laudantium, tempora assumenda delectus officiis fugiat!</div>
-            <h2>Why Choose Us?</h2>
-            <div class="why-choose-us">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                    <li>Dolor aliquid, dolore hic laborum sapiente, beatae maxime quaerat unde sunt quo culpa,</li>
-                    <li>odit corporis quisquam mollitia est laboriosam repudiandae! Assumenda, perferendis.</li>
-                </ul>
-            </div>
+        <div class="details-container">
+            <h2>Dentists Information</h2>
+            <table id="doctorTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $query = "SELECT doctor_id,username,phone_number,email FROM doctors ORDER BY username";
+                    $stmt = $db->prepare($query);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['username'] . "</td>";
+                        echo "<td>" . $row['phone_number'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td><button onclick='deleteDoctor(" . $row['doctor_id'] . ", this.parentNode.parentNode)'>Delete</button></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+
+            </table>
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     <script src="script.js"></script>
+    <script>
+        function deleteDoctor(doctorId, row) {
+            var xhr = new XMLHttpRequest();
+
+            // Define the request
+            xhr.open("DELETE", 'delete_doctor.php?id=' + doctorId, true);
+
+            // Set up the callback function
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var result = xhr.responseText;
+                        if (result === 'success') {
+                            // If the deletion is successful, remove the row from the table
+                            row.remove();
+                            alert("1 record deleted!");
+                        } else {
+                            alert('Deletion failed.');
+                        }
+                    } else {
+                        alert('Request failed with status: ' + xhr.status);
+                    }
+                }
+            };
+
+            // Send the request
+            xhr.send();
+        }
+    </script>
 </body>
 
 </html>

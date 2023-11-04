@@ -44,3 +44,9 @@ Shawn email:shawn@tan.sons.com pwd:123456Aa/
 
 doctor3:
 Shanice email:shanice@tan.sons.com pwd:123456Aa/
+
+
+Possible testing:
+1. client side manipulation (delete 'required' delete select options in developers tab)
+2. Illegal access of the website(user type the path to websites directly on the browser)
+3. negative inputs

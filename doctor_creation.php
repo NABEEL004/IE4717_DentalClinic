@@ -163,10 +163,6 @@ include "db_connection.php";
                 <br>
                 <input type="submit" value="Create Account" class="submit">
             </form>
-            <div class="createaccount">
-                <p>Have an account?</p>
-                <a href="./signin.php">Sign-in here</a>
-            </div>
         </div>
     </div>
     <footer margin-top="100px">Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
