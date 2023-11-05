@@ -224,7 +224,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

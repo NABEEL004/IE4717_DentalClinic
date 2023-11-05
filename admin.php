@@ -74,7 +74,7 @@ require_once "db_connection.php";
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
     <script>
         function deleteDoctor(doctorId, row) {
             var xhr = new XMLHttpRequest();
