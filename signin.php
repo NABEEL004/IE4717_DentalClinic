@@ -41,7 +41,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/signin.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
-    <script src="password.js"></script>
+    <script src="./js/password.js"></script>
     <style>
         .login_alert {
             font-style: italic;
@@ -124,7 +124,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

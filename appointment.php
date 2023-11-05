@@ -32,7 +32,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/appointment.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
-    <script src="set_date.js"></script>
+    <script src="./js/set_date.js"></script>
 </head>
 
 <body>
@@ -81,13 +81,9 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                 <div>
                     <label for="dentist"><sup>*</sup>Dentist:</label>
                     <select id="dentist" name="dentist" required onchange="get_timeslots()">
-                        <!-- <option >Dr Lee</option>
-                        <option >Dr Shawn</option>
-                        <option >Dr Shanice</option> -->
                         <?php
                         $retrieve_doc = "SELECT username from doctors";
                         $result = $db->query($retrieve_doc);
-
                         if ($result) {
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
@@ -99,7 +95,6 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                             echo "Error: " . $mysqli->error;
                         }
                         ?>
-                        <!-- <option value="doctor">Doctor</option> -->
                     </select>
                 </div>
                 <br>
@@ -111,13 +106,6 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                 <div>
                     <label for="time"><sup>*</sup>Time: </label>
                     <select id="time" name="time">
-                        <option> 9:00 am </option>
-                        <option> 10:00 am </option>
-                        <option> 11:00 am </option>
-                        <option> 12:00 pm </option>
-                        <option> 2:00 pm </option>
-                        <option> 3:00 pm </option>
-                        <option> 4:00 pm </option>
                     </select>
                 </div>
                 <p id="no_slots"></p>
@@ -137,7 +125,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
     <script>
         function get_timeslots() {
             document.getElementById("no_slots").innerHTML = '';

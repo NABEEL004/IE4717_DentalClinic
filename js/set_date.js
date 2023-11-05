@@ -1,17 +1,3 @@
-// window.onload = function () {
-
-//     var today = new Date();
-
-
-//     // Format today's date as "YYYY-MM-DD"
-//     var formattedDate = today.toISOString().split('T')[0];
-
-//     // Set the minimum date for the date input to tomorrow
-//     document.getElementById("myDate").min = formattedDate;
-
-
-// }
-
 window.onload = function () {
     var today = new Date();
     

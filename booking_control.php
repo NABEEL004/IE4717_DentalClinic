@@ -42,6 +42,49 @@ function insert_app($db, $date, $time, $doc, $patientID, $note)
     // }
 }
 
+function update_app($db, $date, $time, $doc, $patientID)
+{
+    $query = '';
+
+    $dateTime = new DateTime($time);
+    $timeFormatted = $dateTime->format('H:i:s');
+
+    if ($note == '') {
+        $query =
+            "UPDATE appointments
+            SET  app_date = ?, app_time = ?, doctor_name = ? 
+            WHERE patientID = ?
+            ";
+    } else {
+        $query =
+        "UPDATE appointments
+        SET  app_date = ?, app_time = ?, doctor_name = ?, note = ? 
+        WHERE patientID = ?
+        ";
+            // "INSERT INTO appointments(app_date,app_time,doctor_name,patientID,patient_name,note)
+            // VALUES (?, ?, ?, ?, ?,?)
+            // ";
+    }
+
+    $stmt = $db->prepare($query);
+
+    if ($note == '') {
+        $stmt->bind_param('sssi', $date, $timeFormatted, $doc, $patientID);
+    } else {
+        $stmt->bind_param('ssssi', $date, $timeFormatted, $doc, $note, $patientID);
+    }
+    $stmt->execute();
+
+    // if ($stmt->execute()) {
+    //     header("Location: appointment-details.php");
+    // } else {
+    //     echo "<script>alert('FAILED!');</script>";
+    //     header("Location: appointment.php");
+    // }
+}
+
+
+
 
 function get_patient_name($db, $patientID)
 {

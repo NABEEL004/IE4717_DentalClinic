@@ -37,7 +37,7 @@ include "db_connection.php";
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/createaccount.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
-    <script src="./create_password.js"></script>
+    <script src="./js/create_password.js"></script>
     <style>
         .validation_guide {
             padding-top: 5px;
@@ -183,7 +183,7 @@ include "db_connection.php";
         </div>
     </div>
     <footer margin-top="100px">Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

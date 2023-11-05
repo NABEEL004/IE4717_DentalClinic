@@ -32,21 +32,10 @@ $availableTimeSlots = array_diff($allTimeSlots, $bookedTimeSlots);
 
 
 // Format the result as JSON
-if(date('w', strtotime($date)) == 0)
-{
-    $response = array(
-        'timeSlots' => array() // Convert the associative array to a plain array
-        // 'timeSlots' => $allTimeSlots
-    );
-}   
-else
-{
-    $response = array(
-        'timeSlots' => array_values($availableTimeSlots) // Convert the associative array to a plain array
-        // 'timeSlots' => $allTimeSlots
-    );
-    
-}
+$response = array(
+    'timeSlots' => array_values($availableTimeSlots) // Convert the associative array to a plain array
+    // 'timeSlots' => $allTimeSlots
+);
 
 header('Content-Type: application/json');
 echo json_encode($response);
