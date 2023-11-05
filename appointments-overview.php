@@ -33,7 +33,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/appointments-overview.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
-    <script src="app_overview.js"></script>
+    <script src="./js/app_overview.js"></script>
     <script>
         var app_date = "<?php echo isset($_SESSION["selected_date"]) ? $_SESSION["selected_date"] : ''; ?>";
     </script>
@@ -119,7 +119,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 

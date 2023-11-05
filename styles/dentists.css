@@ -34,7 +34,6 @@
 .title {
     color: #223554;
     margin-bottom: 2rem;
-    margin-top: 2rem;
 }
 
 h3 {
@@ -43,9 +42,4 @@ h3 {
 
 button {
     margin-bottom: 2rem;
-}
-
-
-p {
-    text-align: justify;
 }

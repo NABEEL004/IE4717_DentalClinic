@@ -51,6 +51,8 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     // else {
     //     header("Location: appointments-overview.php");
     // }
+
+    // handling redirection from doctor's appointment overview page
     else if (isset($_GET["patient_email"])) {
         $patient_id = get_patient_id($db,$_GET["patient_email"]);
         // header("Location: appointments-overview.php");
@@ -215,9 +217,18 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                     </td>
                 </tr>
             </table>
-            <a href="./reschedule.php">
+            <?php
+                if (isset($_GET["patient_email"])){
+                    echo "<a href='./reschedule.php?patient_id=$patient_id'><button class='submit'>Reschedule</button></a>";
+                }
+                else {
+                    echo "<a href='./reschedule.php'><button class='submit'>Reschedule</button></a>";
+                }
+
+            ?>
+            <!-- <a href="./reschedule.php">
                 <button class="submit">Reschedule</button>
-            </a>
+            </a> -->
             <form action="logout.php" method="post">
                 <button>Logout</button>
             </form>
