@@ -42,7 +42,7 @@ function insert_app($db, $date, $time, $doc, $patientID, $note)
     // }
 }
 
-function update_app($db, $date, $time, $doc, $patientID)
+function update_app($db, $date, $time, $doc, $patientID, $note)
 {
     $query = '';
 

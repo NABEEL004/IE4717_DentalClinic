@@ -18,7 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $patientID = $_POST["patient"];
 
-        update_app($db, $date, $time_slot, $dentist, $patientID);
+        $note = $_POST["note"];
+
+        update_app($db, $date, $time_slot, $dentist, $patientID, $note);
         $_SESSION["app"]=true;
         header("Location: appointment-details.php");
     } else {

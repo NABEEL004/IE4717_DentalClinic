@@ -12,10 +12,6 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
             header("Location: appointment-details.php");
         }
     }
-    else
-    {
-        header("Location: signin.php");
-    }
 } else {
     header("Location: signin.php");
 }
@@ -125,6 +121,12 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo '<script>alert(' . $_SESSION['message'] . ');</script>';
+        unset($_SESSION['message']);
+    }
+    ?>
     <script src="./js/script.js"></script>
     <script>
         function get_timeslots() {

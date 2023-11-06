@@ -3,6 +3,7 @@ require_once "config_session.php";
 require_once "login_control.php";
 require_once "db_connection.php";
 require_once "booking_control.php";
+require_once "doc_view_control.php";
 if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION["name"])) {
     $user_id = $_SESSION["user_id"];
     $domain = $_SESSION["domain"];
@@ -71,6 +72,10 @@ else {
                     $doctor_name = $_SESSION['name'];
                     echo "<p><i>Hi Dr $doctor_name, you may reschedule your appointment with ".get_patient_name($db,$patient_id)." below.</i></p>";
                 } 
+                else {
+                    $patient_name = $_SESSION['name'];
+                    echo "<p><i>Hi $patient_name, you may reschedule your appointment below</i></p><br>";
+                }
             ?>
             
             <form action="rebook.php" method="post" onsubmit="app_validation(event)"> <!-- Replace "submit_page.php" with your actual form processing script -->
@@ -111,9 +116,11 @@ else {
                 <?php
                     if (isset($_GET['patient_id'])){
                         echo "<input type='hidden' name='patient' value=$patient_id />";
+                        echo "<input type='hidden' name='note' value='' />";
                     }
                     else {
-                        echo               "<div>
+                        echo "<input type='hidden' name='patient' value=$user_id />";
+                        echo "<div>
                         <label for='note'>Note to Clinic: </label>
                         <textarea maxlength='250' rows='5' cols='50' id='note' name='note' placeholder='Max 255 characters'></textarea>
                     </div>";

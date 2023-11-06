@@ -17,14 +17,23 @@ include "db_connection.php";
         $stmt->bind_param('ssss',$name,$pwd,$email,$number);
         if(!$stmt->execute())
         {
+            // $_SESSION['message'] = 'Registration Failed';
+            header("Refresh: 0; url=appointment.php");
+            // echo "<body></body>";
             echo "<script>alert('Registration failed!');</script>";
+            // die;
         }
         else
         {
+            // $_SESSION['message'] = 'Registration is Successful';
+            header("Refresh: 0; url=appointment.php");
             echo "<script>alert('Registration is successful!');</script>";
+            // die;
+            
         }
         $stmt->close();
         $db->close();
+        // header("Location: appointment.php");
     }
 ?>
 
