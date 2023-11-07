@@ -22,6 +22,7 @@ require_once "db_connection.php";
             <ul>
                 <li><a href="./admin.php">Doctor Account Overview</a></li>
                 <li><a href="./doctor_creation.php">Doctor Account Creation</a></li>
+                <li><a href="./app_report.php">Appointment Report</a></li>
             </ul>
         </div>
     </nav>
@@ -37,6 +38,7 @@ require_once "db_connection.php";
                 <ul>
                     <li><a href="./admin.php" onclick="toggleMenu()">Doctor Account Overview</a></li>
                     <li><a href="./doctor_creation.php" onclick="toggleMenu()">Doctor Account Creation</a></li>
+                    <li><a href="./app_report.php" onclick="toggleMenu()">Appointment Report</a></li>
                 </ul>
             </div>
         </div>
