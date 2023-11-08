@@ -5,5 +5,18 @@ table {
     font-size: 1.2rem;
 }
 
+.about-container {
+    gap:0.5rem;
+}
 
+.about-us {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .about-us {
+        font-size: 0.9rem;
+    }
+}
 

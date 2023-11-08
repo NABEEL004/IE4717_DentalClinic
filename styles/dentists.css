@@ -1,11 +1,11 @@
 .dentists-container img {
-    height: 250px;
-    width: 250px;
+    height: 180px;
+    width: 180px;
 }
 
 .dentist {
-    width: 320px;
-    height: 420px;
+    width: 340px;
+    height: 400px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -33,12 +33,16 @@
 
 .title {
     color: #223554;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 h3 {
     font-size: 1.5rem;
+}
+
+h5 {
+    display: none;
 }
 
 button {
@@ -46,5 +50,37 @@ button {
 }
 
 p {
-    text-align: justify;
+    /* text-align: justify; */
+    /* width: 95%; */
+}
+
+#mobile-footer {
+    display: none;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .dentists-container {
+        flex-direction: column;
+    }
+
+    .content-container {
+        justify-content: baseline;
+        height:fit-content;
+    }
+
+    #desktop-footer {
+        display: none;
+    }
+
+    #mobile-footer {
+        display: block;
+        position: static;
+    }
+
+    .dentist {
+        margin-bottom:2rem;
+        margin-top: 1rem;
+    }
+
 }

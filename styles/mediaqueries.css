@@ -17,7 +17,7 @@
         transform: translateX(20px);
     }
 
-    img, .image-container, .image-container:after{
+    .image-container img, .image-container, .image-container:after{
         display: none;
     }
 
