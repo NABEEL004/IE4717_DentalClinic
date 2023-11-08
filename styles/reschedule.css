@@ -7,14 +7,14 @@
 
 .signin-container {
     background-color: #F3FAEF;
-    padding: 3rem 4rem;
+    padding: 1.5rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 40px;
     width: 60%;
-    height:50vh;
+    height: fit-content;
 }
 
 .signin-container form {
@@ -27,7 +27,11 @@
 }
 
 form div {
-    height: 60px;
+    height: 50px;
+}
+
+#textarea-div{
+    height: 100px;
 }
 
 .signin-container h2 {
@@ -75,4 +79,69 @@ input[type="text"], input[type="password"], input[type="date"], select
 
 .createaccount {
     text-align: center;
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+}
+
+.button-wrapper button {
+    margin: 0;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#logout {
+    padding: 0;
+    height: 50px;
+    width: 130px;
+}
+
+@media screen and (max-width: 800px) {
+    .signin-container input, .signin-container select{
+        width: 180px;
+        height: 30px;
+        font-weight: 500;
+        font-family: 'Roboto Slab', sans-serif;
+        padding-left: 0.5rem;
+    }
+
+    textarea {
+        width: 180px;
+    }
+
+    .signin-container label {
+        min-width: 70px;
+        display: inline-block;
+        text-align: right;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+
+    .signin-container {
+        padding: 1.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 40px;
+        width: calc(60% + 4rem);
+        height: fit-content;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin: 0 1rem;
+        text-align: center;
+        
+    }
 }

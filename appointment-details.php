@@ -105,8 +105,8 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/appointment-details.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/appointment-details.css">
 </head>
 
 <body>
@@ -148,7 +148,6 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <div class="content-container">
         <div class="details-container">
             <h2>Appointment Details</h2>
-            <br>
             <p style="font-size: 20px;">
                 <i>
                     <?php
@@ -172,10 +171,9 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
             if ($app) {
                 echo "<p style='font-size: 20px;'><i>Your appointment is ready!</i></p>";
             } else {
-                echo "</br>";
+                echo "";
             }
             ?>
-            <br>
             <table>
                 <tr>
                     <th>Dentist:</th>
@@ -209,7 +207,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                     </td>
                 </tr>
                 <tr>
-                    <th>Note to Clinic:</th>
+                    <th>Note:</th>
                     <td>
                         <?php
                         echo $note;
@@ -217,6 +215,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                     </td>
                 </tr>
             </table>
+            <div class="button-wrapper">
             <?php
                 if (isset($_GET["patient_email"])){
                     echo "<a href='./reschedule.php?patient_id=$patient_id'><button class='submit'>Reschedule</button></a>";
@@ -226,12 +225,13 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                 }
 
             ?>
-            <!-- <a href="./reschedule.php">
-                <button class="submit">Reschedule</button>
-            </a> -->
             <form action="logout.php" method="post">
                 <button>Logout</button>
             </form>
+            </div>
+            <!-- <a href="./reschedule.php">
+                <button class="submit">Reschedule</button>
+            </a> -->
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>

@@ -19,7 +19,7 @@
 
 
 .details-container tr {
-    height: 50px;
+    height: 40px;
 }
 
 .details-container h2 {
@@ -61,6 +61,17 @@ th {
     /* margin: 0 auto ; */
 }
 
+.button-wrapper button {
+    margin: 0;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
 .signin-container .submit:hover {
     background-color: #223554;
     cursor: pointer;
@@ -68,4 +79,45 @@ th {
 
 .createaccount {
     text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .details-container {
+        background-color: #F3FAEF;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 40px;
+        width: calc(60% + 4rem);
+        height:50vh;
+    }
+
+    .details-container th {
+        /* width: 150px; */
+        width: 80px;
+        min-width: 0;
+        height: 30px;
+        font-weight: 400;
+        font-family: 'Roboto Slab', sans-serif;
+        padding-left: 0rem;
+    }
+    
+    .details-container td {
+        width: 240px;
+        min-width: 150px;
+        /* display: inline-block; */
+        text-align: right;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-right: 10px;
+        height:30px;
+    }
+
+    table {
+        width: fit-content;
+
+    }
 }

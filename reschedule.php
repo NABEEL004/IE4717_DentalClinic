@@ -22,8 +22,8 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/reschedule.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/reschedule.css">
     <script src="./js/set_date.js"></script>
 </head>
 
@@ -97,22 +97,19 @@ else {
                         }
                         ?>
                     </select>
-                    <br><br>
                     </div>
                 
                 <div>
                     <label for="date"><sup>*</sup>Date: </label>
                     <input type="date" id="date" name="date" required onchange="get_timeslots()">
-                    <br><br>
                 </div>
                 <div>
                     <label for="time"><sup>*</sup>Time: </label>
                     <select id="time" name="time">
                     </select>
-                    <br><br>
                 </div>
                 
-  
+                        
                 <?php
                     if (isset($_GET['patient_id'])){
                         echo "<input type='hidden' name='patient' value=$patient_id />";
@@ -120,8 +117,8 @@ else {
                     }
                     else {
                         echo "<input type='hidden' name='patient' value=$user_id />";
-                        echo "<div>
-                        <label for='note'>Note to Clinic: </label>
+                        echo "<div id='textarea-div'>
+                        <label for='note'>Note: </label>
                         <textarea maxlength='250' rows='5' cols='50' id='note' name='note' placeholder='Max 255 characters'></textarea>
                     </div>";
                     }
@@ -130,8 +127,9 @@ else {
                 <input type="submit" value="Reschedule" class="submit">
             </form>
             <form action="logout.php" method="post">
-                <button>Logout</button>
+                <button id="logout">Logout</button>
             </form>
+            </div>
         </div>
     </div>
     <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>

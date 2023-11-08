@@ -190,8 +190,8 @@ include "db_connection.php";
                 <a href="./signin.php">Sign-in here</a>
             </div>
         </div>
+        <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     </div>
-    <footer margin-top="100px">Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     <script src="./js/script.js"></script>
 </body>
 
