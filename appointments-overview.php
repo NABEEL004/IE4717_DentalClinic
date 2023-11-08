@@ -31,8 +31,8 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/appointments-overview.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/appointments-overview.css">
     <script src="./js/app_overview.js"></script>
     <script>
         var app_date = "<?php echo isset($_SESSION["selected_date"]) ? $_SESSION["selected_date"] : ''; ?>";
@@ -78,12 +78,10 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <div class="content-container">
         <div class="details-container">
             <h2>Appointments</h2>
-            <br>
             <p style="font-size: 20px;">Appointments for Dr <?php
                     echo $_SESSION["name"];
                 ?>
             </p>
-            <br>
             <form action="" method="">
                 <label for="date">Date: </label>
                 <input type="date" name="date" id="date" value="<?php echo isset($_SESSION["selected_date"]) ? $_SESSION["selected_date"] : ''; ?>">
@@ -117,8 +115,8 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
             </form>
 
         </div>
+        <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     </div>
-    <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     <script src="./js/script.js"></script>
 
 </body>

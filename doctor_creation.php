@@ -35,8 +35,8 @@ include "db_connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/createaccount.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/createaccount.css">
     <script src="./js/doctor_creation.js"></script>
     <style>
         .validation_guide {
@@ -166,8 +166,8 @@ include "db_connection.php";
                 <input type="submit" value="Create Account" class="submit">
             </form>
         </div>
+        <footer margin-top="100px">Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     </div>
-    <footer margin-top="100px">Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     <script src="./js/script.js"></script>
 </body>
 

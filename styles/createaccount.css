@@ -41,7 +41,7 @@ form div {
     color: #223554;
 }
 
-input[type="text"], input[type="password"], select
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select
 {
     font-size:1.1rem;
 }

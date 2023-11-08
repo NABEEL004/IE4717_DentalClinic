@@ -71,10 +71,10 @@ require_once "db_connection.php";
 
             </form>
         </div>
+        <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     </div>
 
 
 
-    <footer>Copyright Tan & Sons Dental Clinic Pte Ltd 2023</footer>
     <script src="./js/script.js"></script>
 </body>

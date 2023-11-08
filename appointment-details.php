@@ -148,13 +148,13 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <div class="content-container">
         <div class="details-container">
             <h2>Appointment Details</h2>
-            <p style="font-size: 20px;">
+            <p>
                 <i>
                     <?php
                     if($domain==='patient')
                     {
                         if ($app) {
-                            echo "Thank you for choosing Tan&Sons Dental Clinic, <b>" . $_SESSION["name"] . "</b>.";
+                            echo "Thank you for choosing Tan & Sons Dental Clinic, <b>" . $_SESSION["name"] . "</b>.";
                         } else {
                             echo "Welcome back, <b>" . $_SESSION["name"] . "</b>. How can we help you today?";
                         }
@@ -169,7 +169,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
             </p>
             <?php
             if ($app) {
-                echo "<p style='font-size: 20px;'><i>Your appointment is ready!</i></p>";
+                echo "<p><i>Your appointment is ready!</i></p>";
             } else {
                 echo "";
             }

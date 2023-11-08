@@ -30,7 +30,7 @@
 }
 
 
-input[type="text"], input[type="password"], select
+input[type="text"], input[type="password"], input[type="email"], select
 {
     font-size:1.1rem;
 }
@@ -94,4 +94,26 @@ input[type="text"], input[type="password"], select
 
 .createaccount {
     text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .signin-container input, .signin-container select {
+        width: 200px;
+        height: 30px;
+        font-weight: 400;
+        font-family: 'Roboto Slab', sans-serif;
+        padding-left: 0.5rem;
+    }
+
+    .signin-container {
+        background-color: #F3FAEF;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 40px;
+        width: calc(60% + 4rem);
+        height:50vh;
+    }
 }

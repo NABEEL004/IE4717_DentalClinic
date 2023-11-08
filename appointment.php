@@ -26,8 +26,8 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/appointment.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/appointment.css">
     <script src="./js/set_date.js"></script>
 </head>
 
@@ -70,9 +70,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
     <div class="content-container">
         <div class="signin-container">
             <h2>Make an Appointment</h2>
-            <br>
             <p><i>Welcome to Tan&Sons Dental Clinic, <?php echo $_SESSION["name"]; ?>. How can we help you today?</i></p>
-            <br>
             <form action="booking.php" method="post" onsubmit="app_validation(event)"> <!-- Replace "submit_page.php" with your actual form processing script -->
                 <div>
                     <label for="dentist"><sup>*</sup>Dentist:</label>
@@ -93,29 +91,24 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["domain"]) && isset($_SESSION
                         ?>
                     </select>
                 </div>
-                <br>
                 <div>
                     <label for="date"><sup>*</sup>Date: </label>
                     <input type="date" id="date" name="date" required onchange="get_timeslots()">
                 </div>
-                <br>
                 <div>
                     <label for="time"><sup>*</sup>Time: </label>
                     <select id="time" name="time">
                     </select>
                 </div>
                 <p id="no_slots"></p>
-                <br>
-                <div>
-                    <label for="note">Note to Clinic: </label>
+                <div id="textarea-div">
+                    <label for="note">Note: </label>
                     <textarea maxlength="250" rows='5' cols='50' id="note" name="note" placeholder="Max 255 characters"></textarea>
                 </div>
-                <br>
                 <input type="submit" value="Book Appointment" class="submit">
-                <br>
             </form>
             <form action="logout.php" method="post">
-                <button>Logout</button>
+                <button id="logout">Logout</button>
             </form>
 
         </div>

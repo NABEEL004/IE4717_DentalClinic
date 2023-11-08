@@ -38,7 +38,7 @@ form div {
     color: #223554;
 }
 
-input[type="text"], input[type="password"], input[type="date"], select
+input[type="text"], input[type="password"], input[type="date"], input[type="email"], select
 {
     font-size:1.1rem;
 }
