@@ -99,8 +99,8 @@ include "db_connection.php";
                 <div>
                     <label for="name"><sup>*</sup>Name: </label>
                     <input type="text" id="name" name="name" required maxlength="50">
-                    <p id="name_alert" class="validation_guide"></p>
                 </div>
+                <p id="name_alert" class="validation_guide"></p>
                 <div class="password-wrapper">
                     <label for="password"><sup>*</sup>Password: </label>
                     <input type="password" id="password" name="password" required maxlength="100" onkeyup="checkPasswordStrength(this.value)">
