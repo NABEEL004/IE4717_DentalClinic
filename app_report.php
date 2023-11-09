@@ -66,7 +66,7 @@ require_once "db_connection.php";
                 </div>
                 <br>
                 <div>
-                    <input type="submit" value="Generate">
+                    <input type="submit" value="Generate" class="submit">
                 </div>
 
             </form>

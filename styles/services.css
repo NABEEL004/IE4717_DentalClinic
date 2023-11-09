@@ -18,5 +18,13 @@ table {
     .about-us {
         font-size: 0.9rem;
     }
-}
 
+    table {
+        height: fit-content;    
+    }  
+    
+    tr {
+        height: 30px;
+    }
+
+}

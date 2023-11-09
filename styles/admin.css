@@ -67,14 +67,14 @@ th {
     height:30px;
 }
 
-tr td a button{
+tr td button{
     /* height: 30px; */
     padding: 0.4rem 0.8rem;
     font-size: 1.1rem;
     margin-top: 0;
 }
 
-.submit {
+.signin-container .submit {
     height: 50px;
     width: 250px;
     border-radius: 40px;
@@ -86,7 +86,7 @@ tr td a button{
     /* margin: 0 auto ; */
 }
 
-.submit:hover {
+.signin-container .submit:hover {
     background-color: #223554;
     cursor: pointer;
 }
@@ -125,7 +125,7 @@ footer {
         height:30px;
     }
     
-    tr td a button{
+    tr td button{
         /* height: 30px; */
         padding: 0.4rem 0.8rem;
         font-size: 1.1rem;
@@ -163,7 +163,7 @@ footer {
         height:30px;
     }
     
-    tr td a button{
+    tr td button{
         /* height: 30px; */
         padding: 0.4rem 0.8rem;
         font-size: 1.1rem;
@@ -171,16 +171,10 @@ footer {
         margin-bottom: 0;
     }
 
-    td:nth-child(3){
+    td:nth-child(2){
         display: none;
     }
-    td:nth-child(4){
-        display: none;
-    }
-    th:nth-child(3){
-        display: none;
-    }
-    th:nth-child(4){
+    th:nth-child(2){
         display: none;
     }
 

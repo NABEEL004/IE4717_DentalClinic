@@ -33,12 +33,33 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+table {
+    width: fit-content;
+    margin: 1rem 0 2rem 0;
+}
+
+.validation_guide {
+    padding-top: 5px;
+    padding-left: 98px;
+    /* font-weight: bold; */
+    font-style: italic;
+    color: #FF0000;
+}
+/* td:nth-child(2) {
+    text-align: left; /* Align the content in the second column to the left */
+    /* width: 100px; */
+/* } */ 
+
+
 form div {
     height: 50px;
+    /* display: flex; */
+    /* flex-direction: row; */
 }
 
 .signin-container h2 {
     color: #223554;
+    margin-bottom: 1rem;
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="tel"], select
@@ -61,6 +82,12 @@ input[type="text"], input[type="password"], input[type="email"], input[type="tel
     font-size: 1.1rem;
     font-weight: 500;
     margin-right: 10px;
+}
+
+tr td label {
+    width: fit-content;
+    min-width: 0 !important;
+    margin: 0 1rem;
 }
 
 .password-wrapper {
@@ -172,4 +199,35 @@ input[type="checkbox"]#consistent:checked + label::before {
 }
 
 
+@media screen and (max-width: 1000px) {
+    .signin-container input, .signin-container select {
+        width: 180px;
+        height: 30px;
+        font-weight: 500;
+        font-family: 'Roboto Slab', sans-serif;
+        padding-left: 0.1rem;
+    }
+
+    .signin-container label {
+        min-width: 130px;
+        display: inline-block;
+        /* text-align: right; */
+        font-size: 1rem;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    
+    .signin-container {
+        margin: 2rem 0rem; /* how to adjust the height of the 'create account form' to make it nicer?*/
+        background-color: #F3FAEF;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 40px;
+        width: fit-content;
+        height:fit-content;
+    }
+}
 
