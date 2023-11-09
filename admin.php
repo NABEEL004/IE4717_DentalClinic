@@ -11,8 +11,8 @@ require_once "db_connection.php";
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
-    <link rel="stylesheet" href="./styles/signin.css">
-    <link rel="stylesheet" href="./styles/appointments-overview.css">
+    <!-- <link rel="stylesheet" href="./styles/signin.css"> -->
+    <link rel="stylesheet" href="./styles/admin.css">
 </head>
 
 <body>

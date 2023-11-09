@@ -68,7 +68,7 @@ function app_doc_count($db,$doc,$currentday,$daysago)
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
     <link rel="stylesheet" href="./styles/signin.css">
-    <link rel="stylesheet" href="./styles/appointments-overview.css">
+    <link rel="stylesheet" href="./styles/report.css">
 </head>
 
 <body>

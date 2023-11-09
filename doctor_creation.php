@@ -38,7 +38,7 @@ include "db_connection.php";
     <link rel="stylesheet" href="./styles/mediaqueries.css">
     <link rel="stylesheet" href="./styles/createaccount.css">
     <script src="./js/doctor_creation.js"></script>
-    <style>
+    <!-- <style>
         .validation_guide {
             padding-top: 5px;
             padding-left: 98px;
@@ -55,7 +55,7 @@ include "db_connection.php";
             text-align: left; /* Align the content in the second column to the left */
             width: 100px;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -158,7 +158,7 @@ include "db_connection.php";
                 </div>
                 <br>
                 <div>
-                    <label for="number"><sup>*</sup>Mobile Phone Number: </label>
+                    <label for="number"><sup>*</sup>Phone Number: </label>
                     <input type="tel" id="number" name="number" required maxlength="8">
                     <p id="phone_alert" class="validation_guide"></p>
                 </div>

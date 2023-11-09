@@ -44,27 +44,9 @@ include "db_connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tan & Sons Dental Clinic</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/createaccount.css">
     <link rel="stylesheet" href="./styles/mediaqueries.css">
+    <link rel="stylesheet" href="./styles/createaccount.css">
     <script src="./js/create_password.js"></script>
-    <style>
-        .validation_guide {
-            padding-top: 5px;
-            padding-left: 98px;
-            /* font-weight: bold; */
-            font-style: italic;
-            color: #FF0000;
-        }
-        table {
-            margin-left: 150px;
-            /* padding-right: 150px; */
-            width: 88%;
-        }
-        td:nth-child(2) {
-            text-align: left; /* Align the content in the second column to the left */
-            width: 100px;
-        }
-    </style>
 </head>
 
 <body>
@@ -106,7 +88,6 @@ include "db_connection.php";
     <div class="content-container">
         <div class="signin-container">
             <h2>Create New Account</h2>
-            <br>
             <form action="createaccount.php" method="post" id="info">
                 <!-- Replace "submit_page.php" with your actual form processing script -->
                 <div>
@@ -115,13 +96,11 @@ include "db_connection.php";
                         <option value="patient">Patient</option>
                     </select>
                 </div>
-                <br>
                 <div>
                     <label for="name"><sup>*</sup>Name: </label>
                     <input type="text" id="name" name="name" required maxlength="50">
                     <p id="name_alert" class="validation_guide"></p>
                 </div>
-                <br>
                 <div class="password-wrapper">
                     <label for="password"><sup>*</sup>Password: </label>
                     <input type="password" id="password" name="password" required maxlength="100" onkeyup="checkPasswordStrength(this.value)">
@@ -153,7 +132,6 @@ include "db_connection.php";
                     </tr>
 
                 </table>    
-                <br>
                 <div class="password-wrapper">
                     <label for="re-password"><sup>*</sup>Re-type Password: </label>
                     <input type="password" id="re-password" name="re-password" onkeyup="checkRePassword(this.value)" required>
@@ -166,7 +144,6 @@ include "db_connection.php";
                         <td text-align="left"><input type="checkbox" id="consistent" class="checkbox" disabled><label for="consistent"></label></td>
                     </tr>
                 </table>
-                <br>
                 <!-- The inputs for password and re-type password can be more interactive
                     Refer to website e.g.: https://users.premierleague.com/users/register/personal
                 -->
@@ -176,16 +153,15 @@ include "db_connection.php";
                     <input type="email" id="email" name="email" required maxlength="127">
                     <p id="email_alert" class="validation_guide"></p>
                 </div>
-                <br>
                 <div>
-                    <label for="number"><sup>*</sup>Mobile Phone Number: </label>
+                    <label for="number"><sup>*</sup>Phone Number: </label>
                     <input type="tel" id="number" name="number" required maxlength="8">
                     <p id="phone_alert" class="validation_guide"></p>
                 </div>
-                <br>
                 <input type="submit" value="Create Account" class="submit">
             </form>
             <div class="createaccount">
+                <br>
                 <p>Have an account?</p>
                 <a href="./signin.php">Sign-in here</a>
             </div>
